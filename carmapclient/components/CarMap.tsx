@@ -23,6 +23,7 @@ const CarMap = () => {
   return (
     <View style={styles.container}>
       <MapView style={styles.map} />
+      {/* For documentation on the MapView see https://github.com/react-native-maps/react-native-maps */}
       <SlidingUpPanel
         ref={panelEl}
         draggableRange={{top: 200, bottom: 0}}
