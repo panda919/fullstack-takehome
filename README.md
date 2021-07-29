@@ -54,12 +54,15 @@ of drivers.
 
 ## Objective
 
+![Video of cars moving on the map](https://github.com/driverscoop/fullstack-takehome/raw/main/CarClientDemo.gif)
+
 In this project you will create an API on the server that publishes updates
 about the simulated locations of vehicles as well as a client UX displaying the
 simulated vehicles on a map. A simulation of vehicle locations is already
 running in the server. Your task is to wire up this simulation to an API that
 can be consumed by the client, and then to place markers on the client's map
-representing each vehicle.
+representing each vehicle. Additionally, you should provide details about a
+vehicle when the user taps on its icon. See the attached GIF for an example.
 
 
 ## Notes
