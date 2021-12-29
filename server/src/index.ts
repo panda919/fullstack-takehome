@@ -9,12 +9,31 @@ import { startPublishingLocationUpdates } from "./carLocationGenerator";
 
 const app = express();
 
+const pubsub = new PubSub();
+
+
+
+
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
+  type Coordinate {
+    latitude: Float
+    longitude: Float
+  }
+  type Car {
+    id:String!
+    location: Coordinate
+    destination:Coordinate
+    distanceToDestination:Float
+  }
   type Query {
     hello: String
   }
+  type Subscription {
+    cars: [Car]
+  }
+
 
   # This is where you should add types to the schema to describe a car and its location
   # as well as a GraphQL Subscription root.
@@ -26,6 +45,11 @@ const resolvers = {
   Query: {
     hello: () => "Hello world!",
   },
+  Subscription:{
+    cars:{
+      subscribe: () => pubsub.asyncIterator(['CARS_UPDATED']),
+    }   
+  }
   
   // This is where you should add a resolver for the Subscription defined above.
   // See https://www.apollographql.com/docs/apollo-server/data/subscriptions/#resolving-a-subscription
@@ -33,7 +57,7 @@ const resolvers = {
 
 
 // This initializes the simulation of car locations. You may need to add arguments to this call.
-startPublishingLocationUpdates();
+startPublishingLocationUpdates(pubsub);
 
 
 // Below is boilerplate to initialize Apollo and the http and subscription servers.

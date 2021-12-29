@@ -5,6 +5,11 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "build:android": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android-build-debug": "cd android/ && gradlew assembleDebug",
+    "clean": "cd android && gradlew clean && cd ..",
+    "reset": "npx react-native start -- --reset",
+    "adb": "cd android && adb reverse tcp:9090 tcp:9090 && cd ..",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
@@ -12,6 +17,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.21",
     "graphql": "^15.5.1",
+    "lodash": "^4.17.21",
     "react": "17.0.1",
     "react-native": "0.64.1",
     "react-native-maps": "^0.28.0",
@@ -24,6 +30,7 @@
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
+    "@types/lodash": "^4.14.178",
     "@types/react-native": "^0.64.5",
     "@types/react-native-vector-icons": "^6.4.8",
     "@types/react-test-renderer": "^16.9.2",
