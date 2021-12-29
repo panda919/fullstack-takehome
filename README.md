@@ -4,6 +4,12 @@ This is a takehome technical project for applicants to The Drivers Cooperative.
 
 Please read this README in its entirety before getting started.
 
+## lixueying note for execute
+
+1. I used genymotion emulator for android.
+   So I used 192.168.56.1 as root url. maybe it necessary to change it as 10.0.0.2 on other machine.
+2. I upload test apk and screen video on product folder. but APK is working only on emulator.
+
 ## How to take this test
 
 The goal is to write a new API on server and client similar to APIs we use at
@@ -22,13 +28,12 @@ Jason) to let us know you're done.
 ## Getting Started
 
 1. Run the server: `cd server && yarn install && yarn run start`
-1.
-   [Set up the React Native development environment](https://reactnative.dev/docs/environment-setup).
+1. [Set up the React Native development environment](https://reactnative.dev/docs/environment-setup).
    If you have not previously set up the React Native environment, expect this
    to take up to an hour.
-  * Follow the `React Native CLI Quickstart`, not the `Expo CLI Quickstart`. You
-   can target the iOS simulator or Android emulator. The Xcode/iOS approach
-   tends to be faster.
+   - Follow the `React Native CLI Quickstart`, not the `Expo CLI Quickstart`. You
+     can target the iOS simulator or Android emulator. The Xcode/iOS approach
+     tends to be faster.
 1. For Android: Register for a
    [Google Maps API Key](https://developers.google.com/maps/documentation/android-sdk/get-api-key)
    and set it in the file at
@@ -37,9 +42,7 @@ Jason) to let us know you're done.
    with the takehome.
 1. Run the client: `cd carmapclient && yarn install && yarn run <ios/android>`
 
-
 At this point, the application should launch in your local simulator and display a map.
-  
 
 ## Background
 
@@ -64,30 +67,28 @@ can be consumed by the client, and then to place markers on the client's map
 representing each vehicle. Additionally, you should provide details about a
 vehicle when the user taps on its icon. See the attached GIF for an example.
 
-
 ## Notes
 
-* The vehicle simulation can be found in `server/src/carLocationGenerator.ts`.
+- The vehicle simulation can be found in `server/src/carLocationGenerator.ts`.
   There is a comment suggesting where to publish updated locations.
-* Support for GraphQL subscriptions has already been set up in both the client
+- Support for GraphQL subscriptions has already been set up in both the client
   and the server.
-* The setup assumes you are running the client application in an iOS simulator
+- The setup assumes you are running the client application in an iOS simulator
   or Android emulator. Currently the client will not connect to your development
   server if you run it on an actual device.
-* There is a png you can use for the vehicle marker at
+- There is a png you can use for the vehicle marker at
   `carmapclient/components/Car.png`.
-* If you are using an M1 Mac computer, you may run into problems using CocoaPods
+- If you are using an M1 Mac computer, you may run into problems using CocoaPods
   for iOS development. See resources below.
-
 
 ## Documentation
 
-* Apollo GraphQL subscriptions are documented for
+- Apollo GraphQL subscriptions are documented for
   [client](https://www.apollographql.com/docs/react/data/subscriptions/) and
   [server](https://www.apollographql.com/docs/apollo-server/data/subscriptions/).
-* The `MapView` is provided by
+- The `MapView` is provided by
   [react-native-maps](https://github.com/react-native-maps/react-native-maps).
-* M1 MacBooks have some issues running some tools. This
+- M1 MacBooks have some issues running some tools. This
   [GitHub issue comment](https://github.com/CocoaPods/CocoaPods/issues/10518#issuecomment-798921838)
   has instructions.
 

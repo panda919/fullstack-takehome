@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/carmapclient.iml" filepath="$PROJECT_DIR$/.idea/modules/carmapclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carmapclient.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carmapclient.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-918737218/carmapclient.react-native-maps.iml" filepath="$PROJECT_DIR$/.idea/modules/-918737218/carmapclient.react-native-maps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1810984383/carmapclient.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-1810984383/carmapclient.react-native-vector-icons.iml" />
     </modules>
   </component>
 </project>

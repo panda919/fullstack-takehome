@@ -6,28 +6,18 @@
  * @format
  */
 
-import {
-  ApolloClient,
-  ApolloProvider,
-  HttpLink,
-  InMemoryCache,
-  split,
-} from '@apollo/client';
-import {WebSocketLink} from '@apollo/client/link/ws';
-import {getMainDefinition} from '@apollo/client/utilities';
+import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache, split } from '@apollo/client';
+import { WebSocketLink } from '@apollo/client/link/ws';
+import { getMainDefinition } from '@apollo/client/utilities';
 import React from 'react';
-import {Platform, SafeAreaView} from 'react-native';
+import { Platform, SafeAreaView } from 'react-native';
 import CarMap from './components/CarMap';
 
 // Note these URLs assume the app is running in a local simulator/emulator
 const httpUrl =
-  Platform.OS === 'ios'
-    ? 'http://localhost:4000/graphql'
-    : 'http://10.0.2.2:4000/graphql';
+  Platform.OS === 'ios' ? 'http://localhost:4000/graphql' : 'http://192.168.56.1:4000/graphql';
 const wsUrl =
-  Platform.OS === 'ios'
-    ? 'ws://localhost:4000/graphql'
-    : 'ws://10.0.2.2:4000/graphql';
+  Platform.OS === 'ios' ? 'ws://localhost:4000/graphql' : 'ws://192.168.56.1:4000/graphql';
 
 // Initialize Apollo Client and Http/WebSocket links
 const httpLink = new HttpLink({
@@ -41,12 +31,9 @@ const wsLink = new WebSocketLink({
 });
 
 const splitLink = split(
-  ({query}) => {
+  ({ query }) => {
     const definition = getMainDefinition(query);
-    return (
-      definition.kind === 'OperationDefinition' &&
-      definition.operation === 'subscription'
-    );
+    return definition.kind === 'OperationDefinition' && definition.operation === 'subscription';
   },
   wsLink,
   httpLink,
